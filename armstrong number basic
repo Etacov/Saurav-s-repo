@@ -1,0 +1,22 @@
+class Solution {
+    static String armstrongNumber(int n){
+        int arm = 0;
+        int temp = n;
+        int digit;
+        String s=Integer.toString(n);
+        int len = s.length();
+        
+        while (temp>0){
+        digit = temp%10;
+        arm = arm + digit * digit * digit;
+        temp = Math.floorDiv(temp, 10);
+    }
+    
+    if (arm == n){
+        return "Yes";
+    }
+    else{
+        return "No";
+    }
+}
+}
